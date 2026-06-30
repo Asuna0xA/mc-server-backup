@@ -1,59 +1,82 @@
-# Minecraft Server Backups
+# 🌲 Minecraft Server Backups 🌲
 
-This repository stores automated regular backups for the Minecraft server under the **Releases** tab.
+```text
+     _      _      _
+   _( )_  _( )_  _( )_
+  (_ % _)(_ % _)(_ % _)
+    (_)    (_)    (_)
+   |  |   |  |   |  |
+   |  |   |  |   |  |
+  =====================
+      MINECRAFT BETA
+  =====================
+       [ ]  [ ]
+       [ ]  [ ]
+       [ ][ ][ ]  
+     [ ][ ][ ][ ]
+```
+> *"You spawn in a new world. The sun is setting. You quickly punch some wood, build a small dirt shelter, and place your first torch. Outside, you hear the distant groans of zombies and the hiss of spiders. This is where the adventure begins..."*
+
+Welcome back, Admin. This repository houses the memories and data of our server. Below are the scrolls needed to resurrect this world in the future.
 
 ---
 
-## How to Restore / Recreate the Server
+## 📜 How to Resurrection / Restore the Server
 
-Because libraries, server software, and precompiled plugin binary `.jar` files are very large and can be easily downloaded, they are excluded from the backup archives to save storage space. Follow these steps to fully recreate the server from a backup:
+To keep these scrolls light and save space on our hard drives, large compiled binaries (`.jar` files) and library books are excluded. Follow these ancient steps to bring the server back to life:
 
-### 1. Extract the Backup Archive
-1. Go to the **Releases** page of this repository on GitHub.
-2. Download the desired backup archive (`backup-YYYY-MM-DD_HH-MM-SS.tar.gz`).
-3. Create a clean server directory and extract the archive there:
+### 1. Dig up the Backup Archive
+1. Go to the **Releases** tab of this repository.
+2. Download the latest backup chest (`backup-YYYY-MM-DD_HH-MM-SS.tar.gz`).
+3. Create a clean folder and extract the chest there:
    ```bash
    mkdir mc-server && cd mc-server
    tar -xzvf path/to/backup-YYYY-MM-DD_HH-MM-SS.tar.gz
    ```
 
-### 2. Download the Server Software (Paper)
-The current server runs on **Minecraft 26.1.2** (Paper build `26.1.2-72-1a6b910`). 
-Download the compatible Paper server jar:
+### 2. Procure the Server Jar (Paper 26.1.2)
+This world is bound to **Minecraft 26.1.2** (Paper build `26.1.2-72-1a6b910`). 
+Download the executable server jar:
 ```bash
 wget -O server.jar https://fill-data.papermc.io/v1/objects/0555a0b0468a5198d8fb1a16e1f9e95c81a917a2dc8f2e09867b4044742f6401/paper-26.1.2-72.jar
 ```
 
-### 3. Restore / Download Plugin Binaries
-The backup includes all plugin configuration directories and custom Skript scripts, but excludes the executable `.jar` files. Download the correct versions of the following plugins and place them inside the `plugins/` directory:
+### 3. Restore the Plugin Runes
+The backup contains all configurations and scripts (including the legendary `herobrine.sk`), but excludes the plugin binaries. Download these plugin jars and place them inside the `plugins/` directory:
 
-| Plugin Name | Expected File Name | Purpose / Download Source |
+| Rune / Plugin Name | Expected File Name | Purpose / Download Source |
 |---|---|---|
-| AdvancedPortals | `AdvancedPortals.jar` | Portals and teleporters |
-| AuthMe | `AuthMe.jar` | Security & authentication |
-| AxGraves | `AxGraves.jar` | Player death chests/graves |
-| EssentialsX | `EssentialsX.jar` | Core commands, spawn, warps |
-| PacketEvents | `PacketEvents.jar` | Packet API dependency |
-| Sentinel | `Sentinel.jar` | NPC security guards |
-| SimpleTPA | `SimpleTPA.jar` | Teleport requests |
-| Skript | `Skript.jar` | Script engine for custom scripts (e.g. `clones.sk`) |
-| WIT | `WIT.jar` | Inventory inspector |
-| Chunky | `chunky.jar` | Pre-generation tool |
-| Citizens | `citizens2.jar` | NPC engine |
-| UltimateClaims | `claims.jar` | Land claims system |
-| LuckPerms | `luckperms.jar` | Permissions manager |
-| OpenInv | `openinv.jar` | Open player inventory container |
-| UltimateTools | `tools.jar` | Custom items and tools |
-| Turrets | `turret.jar` | Turrets defense |
-| UltimateRifts | `ultimaterifts.jar` | Dimensional rifts |
-| WorldEdit | `worldedit.jar` | World builder tool |
-| spark | (folder already restored) | Profiler tool |
+| AdvancedPortals | `AdvancedPortals.jar` | Portal magic |
+| AuthMe | `AuthMe.jar` | Password locks for security |
+| AxGraves | `AxGraves.jar` | Keeps your inventory safe when you perish |
+| EssentialsX | `EssentialsX.jar` | Commands, spawn points, and economy |
+| PacketEvents | `PacketEvents.jar` | Low-level packet hook |
+| Sentinel | `Sentinel.jar` | Brave NPC guards |
+| SimpleTPA | `SimpleTPA.jar` | Teleporting requests between players |
+| Skript | `Skript.jar` | Custom script engine (powers `clones.sk`, `herobrine.sk`) |
+| WIT | `WIT.jar` | Watching containers closely |
+| Chunky | `chunky.jar` | Pre-generating chunks to avoid lag spikes |
+| Citizens | `citizens2.jar` | Spawns NPCs to populate the towns |
+| UltimateClaims | `claims.jar` | Declaring land ownership |
+| LuckPerms | `luckperms.jar` | Permissions and ranks |
+| OpenInv | `openinv.jar` | Open chests and player inventories |
+| UltimateTools | `tools.jar` | Mystical items and tools |
+| Turrets | `turret.jar` | Autonomous defense turrets |
+| UltimateRifts | `ultimaterifts.jar` | Dimensional gates |
+| WorldEdit | `worldedit.jar` | World shaper |
+| spark | (folder already restored) | Profiler |
 
-Ensure the `.jar` names exactly match the expected names list above so config links aren't broken.
+*Make sure the file names match exactly so the old configs recognize them!*
 
-### 4. Start the Server
-Once the server software and plugin jars are in place, start the server using your standard parameters:
+### 4. Ignite the Server
+Run the startup script to start the world:
 ```bash
 java -Xms7G -Xmx7G -jar server.jar nogui
 ```
-On startup, Paper will automatically extract all library files and initialize the plugins.
+
+---
+* **Note:** *Always sleep in a bed to set your spawn point.*
+* **Update Log:**
+  - *Restored backup scripts.*
+  - *Added nostalgic lore.*
+  - *[BUGFIX] Removed Herobrine.*
